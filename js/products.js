@@ -4,22 +4,21 @@ function showProductsList(array){
     for(let i = 0; i < array.length; i++){
         let product = array[i];
 
-        /*if (((minCount == undefined) || (minCount != undefined && parseInt(product.productCount) >= minCount)) &&
-        ((maxCount == undefined) || (maxCount != undefined && parseInt(product.productCount) <= maxCount))){*/
+        
 
 
              htmlContentToAppend += `
             <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+                        <img src="${product.imgSrc}" alt="${product.description}" class="img-thumbnail">
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.currency + product.cost + `</small>
+                            <h4 class="mb-1">${product.name}</h4>
+                            <small class="text-muted"> ${product.currency} ${product.cost}</small>
                         </div>
-                        <p class="mb-1">` + product.description + `</p>
+                        <p class="mb-1">${product.description}</p>
                     </div>
                 </div>
             </a>
@@ -29,18 +28,6 @@ function showProductsList(array){
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
 }
-/*function sortAndShowProducts(sortCriteria, productsArray){
-    currentSortCriteria = sortCriteria;
-
-    if(productsArray != undefined){
-        currentProductsArray = productsArray;
-    }
-
-    currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray);
-
-    //Muestro las categorías ordenadas
-    showProductsList();
-}*/
 
 
 
