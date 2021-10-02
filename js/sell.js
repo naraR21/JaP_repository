@@ -147,3 +147,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             return false;
     });
 });
+function cerrarSesion(){
+    sessionStorage.removeItem("nombreLogin");
+}

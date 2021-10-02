@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         location.href="index.html"
         alert("Debes registrarte para poder ingresar :)")
     }else{
-        document.getElementById("nombreUsuario").innerHTML=`¡HOLA ${username}!`
+        document.getElementById("nombreUsuario").innerHTML=`¡Hola ${username}!`
     }
 });
+function cerrarSesion(){
+    sessionStorage.removeItem("nombreLogin");
+}

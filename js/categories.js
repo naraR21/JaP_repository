@@ -134,3 +134,6 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+function cerrarSesion(){
+    sessionStorage.removeItem("nombreLogin");
+}

@@ -25,7 +25,6 @@ function ordenarProductos(criteria, array){
         result = array.sort(function(a, b) {
             let aCount = parseInt(a.soldCount);
             let bCount = parseInt(b.soldCount);
-
             if ( aCount > bCount ){ return -1; }
             if ( aCount < bCount ){ return 1; }
             return 0;
@@ -36,13 +35,13 @@ function ordenarProductos(criteria, array){
 }
 
 
-function mostrarProductos(/* array */){
+function mostrarProductos(){
 
     let htmlContentToAppend = "";
     for(let i = 0; i <currentProductsArray.length; i++){
         let product =currentProductsArray[i];
-        if (((minCost == undefined) || (minCost != undefined && parseInt(product.cost) >= minCost)) &&
-            ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost))){
+         if (((minCost == undefined) || (minCost != undefined && parseInt(product.cost) >= minCost)) &&
+            ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost))){ 
          
 
              htmlContentToAppend += `
@@ -79,7 +78,7 @@ function ordenarYMostrarProductos(sortCriteria, productsArray){
 
     currentProductsArray = ordenarProductos(currentSortCriteria, currentProductsArray);
 
-    //Muestro las categorías ordenadas
+   
     mostrarProductos();
 }
 
@@ -93,13 +92,9 @@ function ordenarYMostrarProductos(sortCriteria, productsArray){
 
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCTS_URL).then(function(productData){
-        if (productData.status === "ok"){
+         if (productData.status === "ok"){
             ordenarYMostrarProductos(ORDER_ASC_BY_COST, productData.data);
-        }
-        
-            /* productsArray = productData.data;
-            
-            mostrarProductos(productsArray);  */
+        } 
         
     });
     document.getElementById("sortAsc").addEventListener("click", function(){
@@ -147,5 +142,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         mostrarProductos();
     });
 });
-    
+function cerrarSesion(){
+    sessionStorage.removeItem("nombreLogin");
+}
     
