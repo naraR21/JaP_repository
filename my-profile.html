@@ -8,10 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-
+  <link rel="stylesheet" href="https://getbootstrap.com/" type="text/css">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="canonical">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -27,10 +29,30 @@
         font-size: 3.5rem;
       }
     }
+    #imagenLapiz{
+      height: 30px;
+      width: 40px;
+    }
+    #botonEditar{
+      float: right;
+    }
+    #imagenLapiz2{
+      height: 30px;
+      width: 40px;
+    }
+    #botonEditar2{
+      float: right;
+    }
+    #foto{
+      border-radius: 100px;
+      height: 200px;
+      width: 200px;
+    }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/my-profile.css" rel="stylesheet">
 </head>
 
 <body>
@@ -54,14 +76,230 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container">
+    <div class="main">
+      <div class="row">
+        <div class="col-md-4 mt-1">
+          <div class="card text-center sidebar">
+            <div class="card-body">
+              <img  src=""  id="foto"><br>
+              <div>
+               <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editarImagen" id="botonEditar2"  style="width: 65px;;height: 40px;;">
+                 <img src="img/laaapiz.png" id="imagenLapiz2"> 
+              </button> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 mt-1">
+          <div class="card mb-3 content">
+            <h1 class="m-3 pt-3" id="nombrePerfil"></h1>
+            <hr>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <h5>Edad</h5>
+                </div>
+                <div class="col-md-9 text-secondary">
+                  <span id="edadPerfil"></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <h5>Email</h5>
+                </div>
+                <div class="col-md-9 text-secondary">
+                  <span id="emailPerfil"></span>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <h5>Contacto</h5>
+                  </div>
+                  <div class="col-md-9 text-secondary">
+                    <span id="telPerfil"></span>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <h5>Dirección</h5>
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                      <span id="direPerfil"></span>
+                    </div>
+                    </div>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalScrollable" id="botonEditar"  style="width: 65px;;height: 40px;;">
+                    <img src="img/laaapiz.png" id="imagenLapiz">
+                    </button>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Ingrese sus datos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <p>Nombre:<input  type="text" id="nombreGuardado"></p>
+         <p>Edad:<input type="number" maxlenght="2" id="edadGuardada"></p>
+         <p>Email:<input type="text" id="mailGuardado"></p>
+         <p>Teléfono/celular:<input type="number" id="telGuardado"></p>
+         <p>Dirección:<input type="text" id="direGuardada"></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-info" id="guardar" onclick="guardar(); mostrarDatos()" data-dismiss="modal">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="editarImagen" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Elija un avatar o suba su propia foto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="file" onchange="previewFile()" placeholder=""  class="inputFile">
+          <!-- <form id="formFoto">
+            <section class="section pb-0">
+              <div class="container">
+                  <div class="row">
+                    
+                        <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                          <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                            <img src="img/avataaars (1).png" class="img-fluid" alt="feature-image" id="avatar1">
+                              
+                              <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                              <label class="btn btn-primary" for="btn-check">Elegir</label>
+                              
+                          </div>
+                      </div> 
+                      <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                          <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                            <img src="img/avataaars (2).png" class="img-fluid" alt="feature-image" id="avatar2">
+                              
+                              <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                              <label class="btn btn-primary" for="btn-check-2">Elegir</label>
+                              
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                          <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                            <img src="img/avataaars (3).png" id="avatar3" class="img-fluid" alt="feature-image">
+                              
+                              <input type="checkbox" class="btn-check" id="btn-check-3" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                              <label class="btn btn-primary" for="btn-check-3">Elegir</label>
+                              
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                        <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                          <img src="img/avataaars (4).png" class="img-fluid" alt="feature-image" id="avatar4">
+                            
+                            <input type="checkbox" class="btn-check" id="btn-check-4" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                            <label class="btn btn-primary" for="btn-check-4">Elegir</label>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                      <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                        <img src="img/avataaars (5).png" class="img-fluid" alt="feature-image" id="avatar5">
+                          
+                          <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                          <label class="btn btn-primary" for="btn-check-5">Elegir</label>
+                          
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                    <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                      <img src="img/avataaars (6).png" class="img-fluid" alt="feature-image" id="avatar6">
+                        
+                        <input type="checkbox" class="btn-check" id="btn-check-6" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                        <label class="btn btn-primary" for="btn-check-6">Elegir</label>
+                        
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                    <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                      <img src="img/avataaars (7).png" class="img-fluid" alt="feature-image" id="avatar7">
+                        
+                        <input type="checkbox" class="btn-check" id="btn-check-7" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                        <label class="btn btn-primary" for="btn-check-7">Elegir</label>
+                        
+                    </div>
+                   </div>
+                   <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                    <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                      <img src="img/avataaars (8).png" class="img-fluid" alt="feature-image" id="avatar8">
+                        
+                        <input type="checkbox" class="btn-check" id="btn-check-8" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                        <label class="btn btn-primary" for="btn-check-8">Elegir</label>
+                        
+                    </div>
+                   </div>
+                   <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                    <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                      <img src="img/avataaars (9).png" class="img-fluid" alt="feature-image" id="avatar9">
+                        
+                        <input type="checkbox" class="btn-check" id="btn-check-9" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                        <label class="btn btn-primary" for="btn-check-9">Elegir</label>
+                        
+                    </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                    <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                    <img src="img/avataaars (10).png" class="img-fluid" alt="feature-image" id="avatar10">
+                      
+                      <input type="checkbox" class="btn-check" id="btn-check-10" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                      <label class="btn btn-primary" for="btn-check-10">Elegir</label>
+                      
+                     </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                      <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                        <img src="img/avataaars (11).png" class="img-fluid" alt="feature-image" id="avatar11">
+                          
+                          <input type="checkbox" class="btn-check" id="btn-check-11" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                          <label class="btn btn-primary" for="btn-check-11">Elegir</label>
+                          
+                      </div>
+                     </div>
+                     <div class="col-lg-4 col-sm-6 mb-lg- mb-4">
+                      <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> 
+                        <img src="img/avataaars (12).png" class="img-fluid" alt="feature-image" id="avatar12">
+                          
+                          <input type="checkbox" class="btn-check" id="btn-check-12" checked autocomplete="off"  name="foto" onchange="insertarAvatar()">
+                          <label class="btn btn-primary" for="btn-check-12">Elegir</label>
+                         
+                      </div>
+                     </div>
+                </div>
+              </div>
+          </section>
+            </form>-->
+        </div> 
+        <div class="modal-footer">
+          <button class="btn btn-info" onclick="guardarFoto()" data-dismiss="modal">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

@@ -7,8 +7,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 function guardarDatos(){
     var usuario=document.getElementById("nombre").value;
-    sessionStorage.setItem("nombreLogin", usuario);
+    localStorage.setItem("nombreLogin", usuario);
+    var email=document.getElementById("email").value;
+    localStorage.setItem("emailLogin", email);
 }
 function cerrarSesion(){
-    sessionStorage.removeItem("nombreLogin");
+    localStorage.clear();
+    
 }

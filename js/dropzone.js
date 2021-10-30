@@ -3529,5 +3529,6 @@ function __guardMethod__(obj, methodName, transform) {
   }
 }
 function cerrarSesion(){
-  sessionStorage.removeItem("nombreLogin");
+    localStorage.clear();
+    
 }

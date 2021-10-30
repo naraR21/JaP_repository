@@ -51,4 +51,7 @@ function valorEnvio(value){
     let costoEnvio= parseFloat(costo)+((parseFloat(costo)*value)/100);
     document.getElementById("totalFinal").innerHTML=(costoEnvio).toFixed(2);
 }
+function cerrarSesion(){
+    localStorage.clear();
+}
 

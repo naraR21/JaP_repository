@@ -148,5 +148,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 });
 function cerrarSesion(){
-    sessionStorage.removeItem("nombreLogin");
+    localStorage.clear();
+    
 }

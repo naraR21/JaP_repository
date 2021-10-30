@@ -84,30 +84,11 @@ h2 {
 #botonComprar{
     align-content: center;
 }
-/* .btn-outline-primary {
-    color: #007ac7;
-    border: 2px solid #00e0d8
+input{
+    width: 100%;
+    
 }
-
-.btn {
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    text-transform: capitalize;
-    padding: 14px 45px;
-    border-radius: 45px;
-    font-weight: 500;
-    border: 1px solid;
-    position: relative;
-    z-index: 1;
-    transition: .3s ease-in;
-    overflow: hidden
+.interlineado{
+    line-height: 250%;
+    
 }
-
-.hover-bg-primary .btn { transition: unset
-}
-
-.btn-outline-primary:hover {
-    color: #fff !important;
-    background: none;
-    border: 2px solid #00e0d8
-} */
