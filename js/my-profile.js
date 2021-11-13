@@ -1,21 +1,22 @@
-/* avatarArray=[
-  img/avataaars (1).png,
-  img/avataaars (2).png,
-  img/avataaars (3).png,
-  img/avataaars (4).png,
-  img/avataaars (5).png,
-  img/avataaars (6).png,
-  img/avataaars (7).png,
-  img/avataaars (8).png,
-  img/avataaars (9).png,
-  img/avataaars (10).png,
-  img/avataaars (11).png,
-  img/avataaars (12).png,
-] */
-
+/*   avatarArray=[
+  "img/avataaars (1).png",
+  "img/avataaars (2).png",
+  "img/avataaars (3).png",
+  "img/avataaars (4).png",
+  "img/avataaars (5).png",
+  "img/avataaars (6).png",
+  "img/avataaars (7).png",
+  "img/avataaars (8).png",
+  "img/avataaars (9).png",
+  "img/avataaars (10).png",
+  "img/avataaars (11).png",
+  "img/avataaars (12).png",
+] 
+ */ 
 let perfil={};
 let fotoPerfil={};
 let preview = document.querySelector("img");
+let avatar = document.getElementsByName("foto");
 function cerrarSesion(){
   localStorage.clear();
   
@@ -38,17 +39,16 @@ function previewFile() {
       preview.src = "img/avataaars.png";
     }
   }
-   /*function insertarAvatar(){
-     for(let i=0; i<avatarArray.lenght; i++);
-     if(document.getElementsByClassName("btn-check")!=false){
-      document.getElementById("foto").innerHTML=avatarArray[i];
-     }
-     else {
-      preview.src = "img/avataaars.png";
-    }
- 
-  
-} */
+/*    function insertarAvatar(){
+     for(let i=0; i<avatar.length; i++){
+      if(avatar[i].checked){
+        document.getElementById("foto").src=avatarArray[i];
+       }
+       else {
+        preview.src = "img/avataaars.png";
+      }
+     }  
+}  */
   function guardarFoto(){
    fotoPerfil.imagen = document.getElementById("foto").src;
   
@@ -101,6 +101,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(fotoPerfil===null){
         preview.src="img/avataaars.png"
     }
-      
+    
     
 });

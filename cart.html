@@ -12,6 +12,7 @@
   <link rel="canonical" href="https://getbootstrap.com/">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/"> 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -26,6 +27,9 @@
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+    }
+    .claseform{
+      background-color: rgb(226, 62, 62);
     }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -84,7 +88,7 @@
           <div class="text p-1">
             <div class="precioTotal">
             <h3>Subotal: UYU<span id="subtotal"></span></h3>
-            <form>
+            <form class="was-validated">
             <section class="section pb-0">
               <div class="container">
                   <div class="row">
@@ -95,7 +99,7 @@
                           <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> <img src="img/Sin_título-1-removebg-preview.png"  alt="feature-image" id="img21">
                               <h5 class="pt-5 pb-3 text-capitalize card-title">Standar</h5>
                               <p class="mb-4">De 12 a 15 días (+%5 del subtotal)</p> 
-                              <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value="5" name="envio" onchange="valorEnvio(this.value)">
+                              <input type="checkbox" class="btn-check" id="btn-check"  checked autocomplete="off" value="5" name="envio" onchange="valorEnvio(this.value)">
                               <label class="btn btn-primary" for="btn-check">Elegir</label>
                               <!-- <label><input type="radio" value="5" name="envio" onchange="valorEnvio(this.value)">Elegir</label> -->
                           </div>
@@ -104,7 +108,7 @@
                           <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> <img src="img/images-removebg-preview.png" class="img-fluid" alt="feature-image">
                               <h5 class="pt-5 pb-3 text-capitalize card-title">Express</h5>
                               <p class="mb-4">De 5 a 8 días (+7% del subtotal)</p>
-                              <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off" value="7" name="envio" onchange="valorEnvio(this.value)">
+                              <input type="checkbox" class="btn-check" id="btn-check-2"  autocomplete="off" value="7" name="envio" onchange="valorEnvio(this.value)">
                               <label class="btn btn-primary" for="btn-check-2">Elegir</label>
                               <!-- <label><input type="radio" value="7" name="envio" onchange="valorEnvio(this.value)">Elegir</label> -->
                           </div>
@@ -113,7 +117,7 @@
                           <div class="hover-bg-primary text-center position-relative px-4 py-5 rounded-lg shadow"> <img src="img/Sin_título-2-removebg-preview.png" class="img-fluid" alt="feature-image">
                               <h5 class="pt-5 pb-3 text-capitalize card-title">Premium</h5>
                               <p class="mb-4">De 2 a 5 días (+15% del subtotal)</p> 
-                              <input type="checkbox" class="btn-check" id="btn-check-3" checked autocomplete="off" value="25" name="envio" onchange="valorEnvio(this.value)">
+                              <input type="checkbox" class="btn-check" id="btn-check-3"  autocomplete="off" value="25" name="envio" onchange="valorEnvio(this.value)">
                               <label class="btn btn-primary" for="btn-check-3">Elegir</label>
                               <!-- <label><input type="radio" value="15" name="envio" onchange="valorEnvio(this.value)">Elegir</label> -->
                           </div>
@@ -123,12 +127,15 @@
           </section>
             </form>
           <h3 >Total: UYU<span id="totalFinal"></span></h3>
-          
+
           <div class="text-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+            <button class="btn btn-primary" type="submit" data-target="#exampleModal" data-toggle="modal" >Realizar compra</button>
+          </div>
+          <!-- <div class=>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
               Realizar compra
             </button>
-          </div>
+          </div> -->
           </div>
           </div>
         </div>
@@ -138,36 +145,51 @@
   </div>
   </div>
 
-  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalScrollableTitle">Ingrese sus datos</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Ingrese sus datos</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-         <p>Dirección: <input type="text" required></p>
-         <p>Celular: <input type="number" value="" maxlength="9" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-         <p>Correo electrónico: <input type="text"></p>
-         <p>Ingrese una tarjeta:</p>
-         <p class="interlineado">
-         <input required type="text" placeholder="Número de tarjeta">
-         <input required type="text" placeholder="Nombre y apellido">
-         <input required type="number" placeholder="Fecha de expiración" maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
-         <input required type="number" placeholder="Código de seguridad" maxlength="3" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-         <input required type="number" placeholder="CI del titular de la tarjeta" maxlength="8" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-        </p>
+          <div class="container mt-5 p-3 rounded ">
+            <div class="row no-gutters d-flex justify-content-center">
+                <div class="col-md-12">
+                    <div class="payment-info">
+                        <div class="d-flex justify-content-between align-items-center"><span>Elija una tarjeta</span><img class="rounded" id="fotoCart" src="" width="110"></div><span class="type d-block mt-3 mb-1">Card type</span>
+                        <form class="was-validated">
+                        <label class="radio"> <input required type="radio" name="card" value="payment" checked> <span><img width="30" src="https://img.icons8.com/color/48/000000/mastercard.png" /></span> </label>
+                        <label class="radio"> <input required type="radio" name="card" value="payment"> <span><img width="30" src="img/visa.png"  /></span> </label>
+                        <label class="radio"> <input required type="radio" name="card" value="payment"> <span><img width="30" src="img/american-express.png"  /></span> </label>
+                        <div><label class="credit-card-label">Nombre del titular</label><input required type="text" class="form-control credit-inputs" id="nombre"></div>
+                        <div><label class="credit-card-label">Numero de tarjeta</label><input required type="text" class="form-control credit-inputs" placeholder="0000 0000 0000 0000"></div>
+                        <div class="row">
+                            <div class="col-md-6"><label class="credit-card-label">Fecha</label><input required type="text" class="form-control credit-inputs" placeholder="12/24"></div>
+                            <div class="col-md-6"><label class="credit-card-label">CVV</label><input required type="text" class="form-control credit-inputs" placeholder="342"></div>
+                        </div>
+                      </form>
+                        <hr class="line">
+                        <div class="d-flex justify-content-between information"><span>Subtotal</span><span id="subtotalTicket"></span></div>
+                        <div class="d-flex justify-content-between information"><span>Costo envío</span><span id="costoSoloEnvio"></span></div>
+                        <div class="d-flex justify-content-between information"><span>Total</span><span id="totalFinal2"></span></div>
+                        <button class="btn btn-primary btn-block d-flex justify-content-between mt-3" type="button"><span id="totalFinal3"></span><span>Checkout<i class="fa fa-long-arrow-right ml-1"></i></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <div class="modal-footer">
-          <a class="content-center" href="compra-realizada.html">Realizar compra</a>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+         
+            <button class="btn btn-primary" type="submit" >Realizar pago</button>
         </div>
       </div>
     </div>
   </div>
-  
-   
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
