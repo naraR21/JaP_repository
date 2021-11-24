@@ -1,11 +1,12 @@
-const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
-const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
-const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
-const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
-const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
-const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
-const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+const CATEGORIES_URL = "http://127.0.0.1:3000/categoryCategorias";
+const PUBLISH_PRODUCT_URL = "http://127.0.0.1:3000/mensajePublicado";
+const CATEGORY_INFO_URL = "http://127.0.0.1:3000/categoryAuto";
+const PRODUCTS_URL = "http://127.0.0.1:3000/todosAutos";
+const PRODUCT_INFO_URL = "http://127.0.0.1:3000/auto";
+const PRODUCT_INFO_COMMENTS_URL = "http://127.0.0.1:3000/productoComentarios";
+const CART_INFO_URL = "http://127.0.0.1:3000/carritoArticulo";
+const CART_BUY_URL = "http://127.0.0.1:3000/compraRealizada";
+const CARRITO_JAP_URL = "http://127.0.0.1:3000/articulos";
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";

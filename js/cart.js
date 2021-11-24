@@ -1,4 +1,4 @@
-const CARRITO_JAP_URL="https://japdevdep.github.io/ecommerce-api/cart/654.json";
+
 let envio=document.getElementsByClassName("btn-check");
 function precio(costo, moneda){
     if(moneda=="USD"){
